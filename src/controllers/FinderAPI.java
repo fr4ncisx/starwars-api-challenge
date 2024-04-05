@@ -18,7 +18,7 @@ public class FinderAPI {
                 .uri(address)
                 .build();
         try {
-            HttpResponse<String> response = null;
+            HttpResponse<String> response;
             response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
             return new Gson().fromJson(response.body(),Movie.class);
